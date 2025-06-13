@@ -1,13 +1,14 @@
+
 import { AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { ChevronUp, ChevronsUp, DivideSquare, Sigma, Pilcrow, Edit, Binary, PercentCircle, Percent, PiSquare, Braces, SquareRoot, Variable } from "lucide-react"; // More icons
+import { ChevronUp, ChevronsUp, DivideSquare, Sigma, Pilcrow, Percent, Pi, Variable } from "lucide-react";
 
 interface AdvancedFunctionButton {
   label: string;
-  type: 'function' | 'constant' | 'operator'; // Operator for %
-  value: string; // Value to send, e.g., "sin", "Math.PI" or function signature "sqrt("
-  icon?: React.ElementType; // Lucide icon component
-  title?: string; // Tooltip text
+  type: 'function' | 'constant' | 'operator';
+  value: string;
+  icon?: React.ElementType;
+  title?: string;
 }
 
 const functionCategories: { title: string; icon?: React.ElementType; buttons: AdvancedFunctionButton[] }[] = [
@@ -24,22 +25,22 @@ const functionCategories: { title: string; icon?: React.ElementType; buttons: Ad
     title: "Powers & Roots",
     icon: ChevronUp,
     buttons: [
-      { label: "xʸ", type: "operator", value: "^", title: "Power" , icon: ChevronsUp}, 
-      { label: "x²", type: "operator", value: "^2", title: "Square" }, 
+      { label: "xʸ", type: "operator", value: "^", title: "Power" , icon: ChevronsUp},
+      { label: "x²", type: "operator", value: "^2", title: "Square" },
       { label: "x³", type: "operator", value: "^3", title: "Cube" },
-      { label: "√x", type: "function", value: "sqrt", title: "Square Root", icon: SquareRoot }, 
+      { label: "√x", type: "function", value: "sqrt", title: "Square Root" },
       { label: "³√x", type: "function", value: "cbrt", title: "Cube Root" },
-      { label: "¹⁰√x", type: "operator", value: "^(1/10)", title: "Tenth Root"}, // Example, more roots could be specific functions
+      { label: "¹⁰√x", type: "operator", value: "^(1/10)", title: "Tenth Root"},
     ],
   },
   {
     title: "Logarithms & Exponentials",
     icon: Variable,
     buttons: [
-      { label: "log", type: "function", value: "log", title: "Logarithm (base 10)" }, 
+      { label: "log", type: "function", value: "log", title: "Logarithm (base 10)" },
       { label: "ln", type: "function", value: "ln", title: "Natural Logarithm" },
       { label: "eˣ", type: "function", value: "exp", title: "Exponential (e^x)" },
-      { label: "10ˣ", type: "operator", value: "10^", title: "10 to the power of x" }, 
+      { label: "10ˣ", type: "operator", value: "10^", title: "10 to the power of x" },
       { label: "2ˣ", type: "operator", value: "2^", title: "2 to the power of x" },
     ],
   },
@@ -47,10 +48,10 @@ const functionCategories: { title: string; icon?: React.ElementType; buttons: Ad
     title: "Constants & Other",
     icon: Pilcrow,
     buttons: [
-      { label: "π", type: "constant", value: "π", title: "Pi" , icon: PiSquare}, 
+      { label: "π", type: "constant", value: "π", title: "Pi" , icon: Pi},
       { label: "e", type: "constant", value: "e", title: "Euler's Number" },
-      { label: "1/x", type: "operator", value: "1/", title: "Reciprocal", icon: DivideSquare }, 
-      { label: "%", type: "operator", value: "%", title: "Percentage", icon: Percent }, 
+      { label: "1/x", type: "operator", value: "1/", title: "Reciprocal", icon: DivideSquare },
+      { label: "%", type: "operator", value: "%", title: "Percentage", icon: Percent },
       { label: "n!", type: "operator", value: "!", title: "Factorial" },
     ],
   },

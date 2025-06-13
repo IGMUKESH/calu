@@ -5,7 +5,7 @@ import { useState, useCallback, useEffect } from 'react';
 import type { AngleUnit, CalculationHistoryEntry, MemoryOperation } from '@/types';
 import { safeEvaluate } from '@/lib/safe-evaluate';
 import { explainCalculationSteps } from '@/ai/flows/explain-calculation-steps';
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast"; // Corrected import path
 
 const MAX_HISTORY_LENGTH = 20;
 
